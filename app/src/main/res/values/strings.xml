@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">OTHELLO GAME</string>
+    <string name="othello_Text">OTHELLO GAME!</string>
+    <string name="none">none</string>
+    <string name="player">Player</string>
+    <string name="com">COM</string>
+</resources>

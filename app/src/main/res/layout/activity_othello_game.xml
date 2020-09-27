@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OthelloGame">
+
+    <GridView
+        android:id="@+id/boardCell"
+        android:layout_width="360dp"
+        android:layout_height="360dp"
+        android:columnWidth="45dp"
+        android:gravity="center"
+        android:horizontalSpacing="0dp"
+        android:numColumns="8"
+        android:stretchMode="spacingWidthUniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </GridView>
+
+    <TextView
+        android:id="@+id/playerNameBS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:text="Black Side"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/boardCell"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.9" />
+
+    <TextView
+        android:id="@+id/playerNameWS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="White Side"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boardCell"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/blackPoints"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:gravity="center"
+        android:rotation="180"
+        android:text="2"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/playerNameBS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/whitePoints"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:gravity="center"
+        android:text="2"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerNameWS" />
+
+    <ImageView
+        android:id="@+id/currentTurnBS"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/boardCell"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/cell_off" />
+
+    <ImageView
+        android:id="@+id/currentTurnWS"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boardCell"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewWSbtn"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/cell_white" />
+
+    <ImageView
+        android:id="@+id/imageViewWSbtn"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whitePoints"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/discs" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:rotation="180"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/blackPoints"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/discs" />
+
+    <TextView
+        android:id="@+id/resultWS"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:alpha="0.5"
+        android:gravity="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="100sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boardCell"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/resultBS"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:alpha="0.5"
+        android:gravity="center"
+        android:rotation="180"
+        android:textColor="@android:color/background_dark"
+        android:textSize="100sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/boardCell" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
